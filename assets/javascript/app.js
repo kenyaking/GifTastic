@@ -58,3 +58,19 @@ function load_gifs() {
         $('#gif_images').append(row_html);
     }
 }
+function get_data(keyword) {
+    var xhr = $.get("https://api.giphy.com/v1/gifs/search?api_key=OVQOUS7YZIYJaUT0rf2nzKwLZbeV9Ypz&q=" + keyword + "&limit=10&offset=0&rating=G&lang=en");
+    xhr.done(function(data) {
+        gif_data = data.data;
+        load_gifs();
+    });
+}
+function change_gif(evt) {
+    if ($(evt).attr('data-id') === '1') {
+        $(evt).attr('src', $(evt).attr('data-gif'));
+        $(evt).attr('data-id', '2');
+    } else {
+        $(evt).attr('src', $(evt).attr('data-static'));
+        $(evt).attr('data-id', '1');
+    }
+}
