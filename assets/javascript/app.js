@@ -40,7 +40,7 @@ function load_gifs() {
         index++;
         if (index === 3) {
             row_html += '<div class="col-md-4"><p>Rating: ' + gif_data[i].rating.toUpperCase() + '</p>';
-            row_html += '<img src="' + gif_data[i].images.fixed_height_still.url + '" data-static="' + gif_data[i].images.fixed_height_still.url
+            row_html += '<img class="img-fluid" src="' + gif_data[i].images.fixed_height_still.url + '" data-static="' + gif_data[i].images.fixed_height_still.url
                 + '" data-gif="' + gif_data[i].images.fixed_height.url + '" data-id="1" onclick="change_gif(this)"/>';
             row_html += '</div>';
             $('#gif_images').append(row_html);
@@ -48,7 +48,7 @@ function load_gifs() {
             row_html = '<div class="row">';
         } else {
             row_html += '<div class="col-md-4"><p>Rating: ' + gif_data[i].rating.toUpperCase() + '</p>';
-            row_html += '<img src="' + gif_data[i].images.fixed_height_still.url + '" data-static="' + gif_data[i].images.fixed_height_still.url
+            row_html += '<img class="img-fluid" src="' + gif_data[i].images.fixed_height_still.url + '" data-static="' + gif_data[i].images.fixed_height_still.url
                 + '" data-gif="' + gif_data[i].images.fixed_height.url + '" data-id="1" onclick="change_gif(this)"/>';
             row_html += '</div>';
         }
